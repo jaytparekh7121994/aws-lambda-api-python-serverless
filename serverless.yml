@@ -1,0 +1,19 @@
+service: aws-python-project-2022
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.8
+  region: ap-south-1
+
+functions:
+  hello:
+    handler: handler.hello
+  getting_started:
+    handler: application.getting_started
+    events:
+      - http:
+          path: /data
+          method: GET
+
